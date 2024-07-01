@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emmanuel Omonzebaguan 2-Year Goals</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script>
+      function updateDateTime() {
+        const now = new Date();
+        const days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        const utcTime = now.toUTCString().split(" ")[4];
+        const dayOfWeek = days[now.getUTCDay()];
+
+        document.getElementById(
+          "currentTimeUTC"
+        ).textContent = `Current Time in UTC: ${utcTime}`;
+        document.getElementById(
+          "currentDay"
+        ).textContent = `Current Day of the week: ${dayOfWeek}`;
+      }
+
+      window.onload = updateDateTime;
+    </script>
   </head>
   <body>
     <header data-testid="header">
@@ -13,17 +38,42 @@
           src="./assets/img/profile.jpeg"
           alt="Profile Image"
           class="profile-image"
-          data-testid="profile-image"
+          data-testid="slackProfilePicture"
+          height="200"
+          width="200"
         />
         <div class="profile-details">
-          <h1 data-testid="name">Emmanuel Omonzebaguan</h1>
-          <p data-testid="contact">Contact: omonzebaguan.grn@gmail.com</p>
+          <h1 data-testid="slackDisplayName">Emmanuel Omonzebaguan</h1>
+          <p id="currentTimeUTC" data-testid="currentTimeUTC">
+            Current Time in UTC:
+          </p>
+          <p id="currentDay" data-testid="currentDay">
+            Current Day of the week:
+          </p>
+          <p data-testid="slackEmail">
+            Slack Email: omonzebaguan.grn@gmail.com
+          </p>
         </div>
       </div>
-      <p data-testid="intro">
+      <!-- <p data-testid="intro">
         As a Frontend and Mobile Developer Planning to Build a SaaS Company and
         Venture into Web3
-      </p>
+      </p> -->
+      <div class="links" data-testid="links">
+        <a href="https://hng.tech/learn" target="_blank" data-testid="hngLink"
+          >HNG</a
+        >
+        <a href="https://keyword.dog" target="_blank" data-testid="keywordLink">
+          Keyword Dog
+        </a>
+        <a
+          href="https://scrapeanyweb.site"
+          target="_blank"
+          data-testid="scrapeanywebLink"
+        >
+          Scrape Any Web</a
+        >
+      </div>
     </header>
 
     <main>
