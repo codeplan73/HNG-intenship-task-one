@@ -61,7 +61,7 @@ header .links {
   gap: 1rem;
 }
 
-header a {
+header .links a {
   color: var(--secondary-color);
   text-decoration: none;
   padding: 8px 12px;
@@ -71,7 +71,7 @@ header a {
   transition: background-color 0.3s, color 0.3s;
 }
 
-header a:hover {
+header .links a:hover {
   background-color: #0056b3;
   color: #fff;
 }
